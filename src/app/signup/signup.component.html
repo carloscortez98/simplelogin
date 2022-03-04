@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="signup-div">
+    <div class="button-field">
+      <button routerLink="/" style="cursor:pointer" name="back" class="cta2">
+        <img src="/assets/images/left-arrow.png" alt="volver" width="18">
+        <span class="hover-underline-animation2"> Volver </span>
+      </button>
+    </div>
+    <h1>¡Registrarme!</h1>
+    <span class="span-alert">Por favor, <strong>NO</strong> ingreses tus datos reales :D</span>
+    <div class="">
+      <form class="" [formGroup]="signupForm" (ngSubmit)="signup()">
+        <div class="form-field">
+          <label class="custom-field one">
+            <input autocomplete="off" formControlName="name" name="name" type="text" placeholder=" "/>
+            <span class="placeholder">Nombre</span>
+          </label>
+          <span *ngIf="signupForm.get('name')?.hasError('required') && signupForm.get('name')?.touched" class="form-error">Este campo es obligatorio</span>
+          <span *ngIf="signupForm.get('name')?.hasError('minlength') && !signupForm.get('name')?.hasError('pattern') && signupForm.get('name')?.dirty" class="form-error">
+            El nombre debe contener al menos 3 caracteres
+          </span>
+          <span *ngIf="signupForm.get('name')?.hasError('maxlength') && !signupForm.get('name')?.hasError('pattern') && signupForm.get('name')?.dirty" class="form-error">
+            El nombre no debe contener más de 20 caracteres
+          </span>
+          <span *ngIf="signupForm.get('name')?.hasError('pattern')" class="form-error">
+            El nombre no puede contener números o signos
+          </span>
+        </div>
+        <div class="form-field">
+          <label class="custom-field one">
+            <input autocomplete="off" formControlName="email" name="email" type="email" placeholder=" "/>
+            <span class="placeholder">Email</span>
+          </label>
+          <span *ngIf="signupForm.get('email')?.hasError('required') && signupForm.get('email')?.touched" class="form-error">Este campo es obligatorio</span>
+          <span *ngIf="signupForm.get('email')?.hasError('minlength') && !signupForm.get('email')?.hasError('pattern') && signupForm.get('email')?.dirty" class="form-error">
+            El email debe contener al menos 3 caracteres
+          </span>
+          <span *ngIf="signupForm.get('email')?.hasError('maxlength') && !signupForm.get('email')?.hasError('pattern') && signupForm.get('email')?.dirty" class="form-error">
+            El email no puede contener más de 100 caracteres
+          </span>
+          <span *ngIf="signupForm.get('email')?.hasError('pattern')" class="form-error">
+            El email no cumple con el formato
+          </span>
+        </div>
+        <div class="form-field">
+          <label class="custom-field one">
+            <input autocomplete="off" formControlName="password" name="password" type="password" placeholder=" "/>
+            <span class="placeholder">Contraseña</span>
+          </label>
+          <span *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched" class="form-error">Este campo es obligatorio</span>
+          <span *ngIf="signupForm.get('password')?.hasError('minlength') && !signupForm.get('password')?.hasError('pattern') && signupForm.get('password')?.dirty" class="form-error">
+            La contraseña debe contener al menos 5 caracteres
+          </span>
+          <span *ngIf="signupForm.get('password')?.hasError('maxlength') && !signupForm.get('password')?.hasError('pattern') && signupForm.get('password')?.dirty" class="form-error">
+            La contraseña no puede contener más de 20 caracteres
+          </span>
+        </div>
+        <div class="button-field2">
+          <button type="submit" name="signup" [disabled]="signupForm.invalid" class="cta">
+            <span class="hover-underline-animation"> Enviar </span>
+            <img src="/assets/images/right-arrow.png" alt="enviar" width="18">
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
