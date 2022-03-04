@@ -12,7 +12,7 @@ export class SignupComponent implements OnInit {
 
   signupForm:FormGroup;
 
-  constructor(private router:Router, private form:FormBuilder, private uSrv:UsersService,) {
+  constructor(private router:Router, private form:FormBuilder, private uSrv:UsersService) {
     this.signupForm = this.form.group({
       name: ["", Validators.compose([
         Validators.required,
