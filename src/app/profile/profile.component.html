@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="profile-div">
+    <h1>¡Hola, <strong>PROFILE</strong>! Gracias por probar ésta pequeña aplicación.</h1>
+    <div class="buttons-div">
+      <button class="logout"><span class="text">Cerrar Sesion</span><span class="icon"><img src="/assets/images/logout-icon.png" alt="logout" width="18"></span></button>
+      <button class="delete"><span class="text">Eliminar mi cuenta</span><span class="icon"><img src="/assets/images/delete-icon.png" alt="delete" width="14"></span></button>
+    </div>
+    <div class="contact-info">
+      <span class="span-alert">¡Contactame!</span>
+      <div class="social-div" (click)="copyEmail()" style="cursor:pointer;">
+        <img src="/assets/images/gmail-logo.png" alt="gmail-logo" width="24">
+        <span id="email">carloscor998@gmail.com</span>
+      </div>
+      <div class="social-div" onclick="location.href='https://www.github.com';" style="cursor: pointer;">
+        <img src="/assets/images/github-logo.png" alt="github-logo" width="24">
+        <span><a href="https://github.com/carloscortez98">/carloscortez98</a></span>
+      </div>
+      <div class="social-div" onclick="location.href='https://www.instagram.com';" style="cursor: pointer;">
+        <img src="/assets/images/instagram-logo.png" alt="instagram-logo" width="24">
+        <span><a href="https://www.instagram.com/carloscortez98/">/carloscortez98</a></span>
+      </div>
+      <div class="social-div" (click)="copyPhone()" style="cursor:pointer;">
+        <img src="/assets/images/whatsapp-logo.png" alt="whatsapp-logo" width="24">
+        <span id="phone">+54 1138623183</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,193 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d68878;
+}
+
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.profile-div {
+  width: 40%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #dfc39c;
+  padding: 2%;
+  border-style: dashed;
+  border-color: #d68878;
+  border-width: 5px;
+}
+
+.buttons-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-div button {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.contact-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.span-alert {
+  font-size: 20px;
+  margin-bottom: 2%;
+  letter-spacing: 2px;
+}
+
+.social-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+.social-div span {
+  margin-top: 0;
+  margin-left: 5px;
+  font-size: 16px;
+  font-family: "LGC", sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* From cssbuttons.io */
+.logout {
+ width: 200px;
+ height: 50px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ background: red;
+ border: none;
+ border-radius: 5px;
+ box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+ background: #4368B8;
+}
+
+.logout, .logout span {
+ transition: 200ms;
+}
+
+.logout .text {
+ transform: translateX(30px);
+ color: white;
+ font-weight: bold;
+}
+
+.logout .icon {
+ position: absolute;
+ border-left: 1px solid #3156A6;
+ transform: translateX(150px);
+ height: 40px;
+ width: 40px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.logout:hover {
+ background: #6587CE;
+}
+
+.logout:hover .text {
+ color: transparent;
+}
+
+.logout:hover .icon {
+ width: 150px;
+ border-left: none;
+ transform: translateX(20px);
+}
+
+.logout:focus {
+ outline: none;
+}
+
+.logout:active .icon img {
+ transform: scale(0.8);
+}
+
+/* From cssbuttons.io */
+.delete {
+ width: 200px;
+ height: 50px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ background: red;
+ border: none;
+ border-radius: 5px;
+ box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+ background: #e62222;
+}
+
+.delete, .delete span {
+ transition: 200ms;
+}
+
+.delete .text {
+ transform: translateX(10px);
+ color: white;
+ font-weight: bold;
+}
+
+.delete .icon {
+ position: absolute;
+ border-left: 1px solid #c41b1b;
+ transform: translateX(150px);
+ height: 40px;
+ width: 40px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.delete:hover {
+ background: #ff3636;
+}
+
+.delete:hover .text {
+ color: transparent;
+}
+
+.delete:hover .icon {
+ width: 150px;
+ border-left: none;
+ transform: translateX(20px);
+}
+
+.delete:focus {
+ outline: none;
+}
+
+.delete:active .icon img {
+ transform: scale(0.8);
+}
