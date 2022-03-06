@@ -39,6 +39,7 @@ export class SignupComponent implements OnInit {
       const user:any = await this.uSrv.signup(this.signupForm.value);
       if (user["error"] == "No") {
         alert(user["message"])
+        this.router.navigateByUrl("/login")
       } else {
         alert(user["message"])
       }

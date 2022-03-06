@@ -23,6 +23,26 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  async login() {
+    try {
+      const response:any = await this.uSrv.login(this.loginForm.value);
+      if (response["token"]) {
+        localStorage.setItem("token", response["token"])
+        // const decodedResponse = jwt_decode(response["token"])
+        // this.dSrv.userRole = decodedResponse["role"]
+        this.router.navigateByUrl("/")
+        alert(response["message"])
+      } else if (response["error"]) {
+        alert(response["message"])
+      }
+    } catch (error) {
+      localStorage.clear();
+      // this.dSrv.userRole = "";
+      alert("Problema con la base de datos, por favor contactate conmigo")
+      this.router.navigateByUrl("/")
+    }
+  }
+
   ngOnInit(): void {
   }
 
