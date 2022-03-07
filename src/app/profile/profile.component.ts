@@ -47,15 +47,15 @@ export class ProfileComponent implements OnInit {
       }
 
       const deleted:any = await this.uSrv.delete(id).toPromise();
-      if (deleted["error"] == "Si") {
-        this._snackBar.open("Por favor, vuelva a iniciar sesion", 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
-        localStorage.clear();
-        this.uSrv.userName = "";
-        this.router.navigateByUrl("/login")
-      } else if (deleted["error"] == "No") {
+      if (deleted["error"] == "No") {
         localStorage.clear();
         this.uSrv.userName = "";
         this._snackBar.open(deleted["message"], 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
+        this.router.navigateByUrl("/login")
+      } else {
+        localStorage.clear();
+        this.uSrv.userName = "";
+        this._snackBar.open("Por favor, vuelva a iniciar sesion.", 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
         this.router.navigateByUrl("/login")
       }
     } catch (error) {
