@@ -1,2 +1,25 @@
 html, body { height: 100%; }
 body { padding: 0; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-simple-snack-bar-content {
+  color: #a72362;
+  font-size: 14px;
+  background-color: #dfc39c;
+}
+
+.mat-simple-snackbar {
+  background-color: #dfc39c;
+}
+
+.mat-snack-bar-container {
+  min-width: 0 !important;
+  max-width: 55vw !important;
+  background-color: #dfc39c;
+}
+
+.mat-simple-snackbar-action {
+  color: #a72362;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #dfc39c;
+}

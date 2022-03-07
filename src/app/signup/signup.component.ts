@@ -46,7 +46,7 @@ export class SignupComponent implements OnInit {
       }
     } catch (error) {
       localStorage.clear();
-      // this.dSrv.userRole = "";
+      this.uSrv.userName = "";
       this._snackBar.open("Problema con la base de datos, por favor contactate conmigo", 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
       this.router.navigateByUrl("/")
     }

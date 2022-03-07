@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -29,8 +30,9 @@ export class LoginComponent implements OnInit {
       const response:any = await this.uSrv.login(this.loginForm.value);
       if (response["token"]) {
         localStorage.setItem("token", response["token"])
-        // const decodedResponse = jwt_decode(response["token"])
-        // this.dSrv.userRole = decodedResponse["role"]
+        const decodedResponse:any = jwt_decode(response["token"])
+        this.uSrv.userName = decodedResponse["name"]
+        this.uSrv.token = response["token"]
         this._snackBar.open(response["message"], 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
         this.router.navigateByUrl("/profile")
       } else if (response["error"]) {
@@ -38,7 +40,7 @@ export class LoginComponent implements OnInit {
       }
     } catch (error) {
       localStorage.clear();
-      // this.dSrv.userRole = "";
+      this.uSrv.userName = "";
       this._snackBar.open("Problema con la base de datos, por favor contactate conmigo", 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
       this.router.navigateByUrl("/")
     }

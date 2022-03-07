@@ -7,6 +7,9 @@ import { environment } from '../../environments/environment';
 })
 export class UsersService {
 
+  userName:string = "";
+  token:string = "";
+
   constructor(private http:HttpClient) { }
 
   signup(user:any) {
@@ -15,6 +18,14 @@ export class UsersService {
 
   login(user:any) {
     return this.http.post(environment.api+"user"+"/login", user).toPromise();
+  }
+
+  delete(id:any) {
+    let token:any = ""
+    if (localStorage.getItem("token")) {
+      token = localStorage.getItem("token");
+    }
+    return this.http.delete(environment.api+"user"+"/delete"+"/"+id, {headers:{"x-access-token":token}})
   }
 
 }
