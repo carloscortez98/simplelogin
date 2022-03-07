@@ -13,9 +13,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class ProfileComponent implements OnInit {
 
-  userName:any = "";
-
-  constructor(private clipboard: Clipboard, private _snackBar:MatSnackBar, private uSrv:UsersService, private router:Router) { }
+  constructor(private clipboard: Clipboard, private _snackBar:MatSnackBar, public uSrv:UsersService, private router:Router) { }
 
   copyEmail() {
     const email = $('#email').text();
@@ -67,13 +65,18 @@ export class ProfileComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.userName = await this.uSrv.userName;
-      if (!localStorage.getItem("token")) {
-        localStorage.clear();
-        this.uSrv.userName = "";
-        this._snackBar.open("Debe iniciar sesion para acceder", 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
-        this.router.navigateByUrl("/login")
+    if (localStorage.getItem("token")) {
+      let localToken:any = localStorage.getItem("token")
+      let decodedlocalToken:any = jwt_decode(localToken)
+      if (decodedlocalToken["name"]) {
+        let userName:any = decodedlocalToken["name"]
+        this.uSrv.userName = userName
       }
+    } else {
+      localStorage.clear();
+      this.uSrv.userName = "";
+      this._snackBar.open("Debe iniciar sesion para acceder", 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
+      this.router.navigateByUrl("/profile")
+    }
   }
-
 }
