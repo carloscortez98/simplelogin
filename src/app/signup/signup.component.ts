@@ -52,7 +52,11 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    if (localStorage.getItem("token")) {
+      this._snackBar.open("Debe cerrar sesion para acceder", 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
+      this.router.navigateByUrl("/profile")
+    }
   }
 
 }

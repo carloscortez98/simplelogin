@@ -68,6 +68,12 @@ export class ProfileComponent implements OnInit {
 
   async ngOnInit() {
     this.userName = await this.uSrv.userName;
+      if (!localStorage.getItem("token")) {
+        localStorage.clear();
+        this.uSrv.userName = "";
+        this._snackBar.open("Debe iniciar sesion para acceder", 'x', { horizontalPosition: "end", verticalPosition: "top", duration: 2000})
+        this.router.navigateByUrl("/login")
+      }
   }
 
 }
