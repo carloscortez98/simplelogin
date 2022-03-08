@@ -7,6 +7,10 @@
   background-color: #d68878;
 }
 
+h1 {
+  font-weight: bold;
+}
+
 h1, h3 {
   letter-spacing: 2px;
 }
@@ -24,6 +28,7 @@ h1, h3, span {
 .span-alert2 {
   margin-top: 4%;
   margin-bottom: 8%;
+  font-weight: bold;
 }
 
 .home-div {
