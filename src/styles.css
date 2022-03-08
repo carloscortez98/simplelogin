@@ -1,6 +1,10 @@
 html, body { height: 100%; }
 body { padding: 0; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .mat-simple-snack-bar-content {
   color: #a72362;
   font-size: 14px;

@@ -63,12 +63,6 @@ h1, span {
   color: #bc295c;
 }
 
-/*  */
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 .custom-field {
   position: relative;
   font-size: 14px;
@@ -101,7 +95,6 @@ h1, span {
   top: 22px;
   line-height: 100%;
   transform: translateY(-50%);
-  /* color: #e5e6b4; */
   color: #d68878;
   transition:
     top 0.3s ease,
@@ -117,10 +110,8 @@ h1, span {
   color: #222;
 }
 
-/* ONE */
 .custom-field.one input {
   background: none;
-  /* border: 2px solid #e5e6b4; */
   border: 2px solid #d68878;
   transition: border-color 0.3s ease;
 }
@@ -147,7 +138,6 @@ h1, span {
   width: auto
 }
 
-/* From cssbuttons.io by @alexmaracinaru */
 .cta {
  border: none;
  background: none;

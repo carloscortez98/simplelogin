@@ -57,11 +57,6 @@ h1, h3, span {
   margin-bottom: 0;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* From cssbuttons.io by @alexmaracinaru */
 .cta {
  border: none;
  background: none;
