@@ -247,3 +247,15 @@ h1, span {
  transform: scaleX(1);
  transform-origin: bottom right;
 }
+
+@media (max-width: 768px) {
+  .login-div {
+    width: 80%;
+    padding: 4%;
+  }
+
+  h1 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
