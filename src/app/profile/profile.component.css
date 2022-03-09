@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ a {
 
 .profile-div {
   width: 40%;
-  height: 80vh;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -190,6 +190,23 @@ a {
 @media (max-width: 768px) {
   .profile-div {
     width: 80%;
+    height: 60%;
+    padding: 4%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .social-div span {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profile-div {
+    width: 80%;
+    height: 70%;
     padding: 4%;
   }
 
